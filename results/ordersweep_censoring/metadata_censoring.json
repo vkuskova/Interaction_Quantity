@@ -1,0 +1,30 @@
+{
+  "experiment": "ordersweep_censoring",
+  "timestamp": "2026-07-04 11:48:06",
+  "config": {
+    "CELLS": [
+      [
+        "pair0.99",
+        20000
+      ],
+      [
+        "pair0.9",
+        5000
+      ]
+    ],
+    "R_CENS": 20,
+    "SIGMAS": [
+      0.0,
+      0.5
+    ],
+    "S_SPLITS": 10,
+    "ALPHA": 0.05,
+    "K_MAX": 3,
+    "D": 4,
+    "train_frac": 0.75,
+    "dgp": "o3"
+  },
+  "code_sha256": "545ebe8e7fa0bef8b4c69475c12ad8a6626c8e4fe670b8c3a34aa053573c63f2",
+  "provenance_scope": "function bytecode + config dict only; not full source text or comments",
+  "numpy": "2.0.2"
+}

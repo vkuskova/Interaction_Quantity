@@ -1,0 +1,28 @@
+{
+  "experiment": "extensions_d5",
+  "timestamp": "2026-07-21 01:35:34",
+  "config": {
+    "N": 20000,
+    "R": 10,
+    "SIGMA": 0.5,
+    "DGPS": [
+      "o1_5",
+      "o2_5",
+      "o3_5"
+    ],
+    "DEPS": [
+      "indep",
+      "pair0.5",
+      "pair0.9"
+    ],
+    "K": 3,
+    "D": 4,
+    "S": 10,
+    "ALPHA": 0.05,
+    "SEED_SCHEME": "crc32-full-v3"
+  },
+  "code_sha256": "b1219915799cc1e804d2efa4ebac9d82b22bf82e8f2a7b75b68ca03a62a05a8d",
+  "numpy": "2.0.2",
+  "scipy": "1.16.3",
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]"
+}

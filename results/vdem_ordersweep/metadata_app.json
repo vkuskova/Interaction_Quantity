@@ -1,0 +1,41 @@
+{
+  "experiment": "vdem_ordersweep_app",
+  "timestamp": "2026-07-26 21:07:57",
+  "config": {
+    "TRIPLES": {
+      "navco": [
+        "navco_nonviol",
+        "v2csprtcpt",
+        "v2clrspct"
+      ],
+      "party": [
+        "v2xps_party",
+        "v2csprtcpt",
+        "v2clrspct"
+      ],
+      "antimv": [
+        "v2csantimv",
+        "v2csprtcpt",
+        "v2clrspct"
+      ]
+    },
+    "OUTCOMES": [
+      "upturn",
+      "downturn"
+    ],
+    "S_SPLITS": 10,
+    "ALPHA": 0.05,
+    "K_MAX": 3,
+    "D": 4,
+    "train_frac": 0.75,
+    "block_col": "country_id",
+    "SEED_SCHEME": "crc32-full-v3"
+  },
+  "code_sha256": "0c937fd023d29c42e23f369fd343f127731af62071ae43bc1f53528d65047f0a",
+  "provenance_scheme": "code+consts-v2",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "pandas": "3.0.2",
+  "python": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39"
+}

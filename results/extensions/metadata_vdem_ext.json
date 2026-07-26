@@ -1,0 +1,41 @@
+{
+  "experiment": "extensions_vdem",
+  "timestamp": "2026-07-21 01:35:50",
+  "config": {
+    "TRIPLES": {
+      "navco": [
+        "navco_nonviol",
+        "v2csprtcpt",
+        "v2clrspct"
+      ],
+      "party": [
+        "v2xps_party",
+        "v2csprtcpt",
+        "v2clrspct"
+      ],
+      "antimv": [
+        "v2csantimv",
+        "v2csprtcpt",
+        "v2clrspct"
+      ]
+    },
+    "OUTCOMES": [
+      "upturn",
+      "downturn"
+    ],
+    "nid_tau_transferred": 24.212468153397012,
+    "pairwise_impl": "rpy2-hierNet",
+    "cv1se_blocked_folds": true,
+    "S": 10,
+    "ALPHA": 0.05,
+    "K": 3,
+    "D": 4,
+    "SEED_SCHEME": "crc32-full-v3"
+  },
+  "code_sha256": "b3fa387ba3a9c6c4c62e327dfcef54f0fb98e940ff0cb9a8275b4b96c7810f8b",
+  "numpy": "2.0.2",
+  "scipy": "1.16.3",
+  "pandas": "2.2.2",
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.35"
+}

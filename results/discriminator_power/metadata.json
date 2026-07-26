@@ -1,0 +1,32 @@
+{
+  "experiment": "discriminator_power",
+  "timestamp": "2026-07-26 21:07:53",
+  "config": {
+    "N": 20000,
+    "R_REPS": 20,
+    "SIGMAS": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "dgp": "o3",
+    "dependence": "pair0.9",
+    "S_SPLITS": 10,
+    "ALPHA": 0.05,
+    "K_MAX": 3,
+    "D": 4,
+    "train_frac": 0.75,
+    "cv_folds": 5,
+    "SEED_SCHEME": "crc32-full-v3"
+  },
+  "code_sha256": "6cce21b75a9387f0797876784fcc9be8e44b1d1fcd99f774b8819a11998a951a",
+  "provenance_scheme": "code+consts-v2",
+  "provenance_scope": "full function source + config; seed scheme in config",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "python": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.18.5-x86_64-with-glibc2.39",
+  "blas": "see numpy.show_config"
+}
