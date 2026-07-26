@@ -1,4 +1,4 @@
-# Reproducibility bundle — "How Many Variables Interact?"
+# Reproducibility bundle for paper "How Many Variables Interact?"
 
 Anonymized supplementary material for the order-sweep interaction-order
 selection paper. Two independent levels of reproduction:
