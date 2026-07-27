@@ -1,10 +1,11 @@
-# Reproducibility bundle for paper "How Many Variables Interact?"
+# Reproducibility bundle — "How Many Variables Interact?"
 
 Anonymized supplementary material for the order-sweep interaction-order
 selection paper. Two independent levels of reproduction:
 
-- **Step 1 — Verify:** recompute every number in the paper's tables from
-  the shipped per-replicate artifacts, without running any experiment.
+- **Step 1 — Verify:** recompute every number in the paper's tables, and
+  the K=4 and coverage headline numbers, from the shipped per-replicate
+  artifacts, without running any experiment.
 - **Step 2 — Rerun:** regenerate all artifacts from scratch in a hosted
   Python environment (e.g. Colab), then re-verify.
 
@@ -17,16 +18,22 @@ order_sweep_repro/
   results/                   per-replicate artifacts, one dir per experiment
     ordersweep_validation/   Tables: main suite + appendix full table
     ordersweep_censoring/    Table: censoring exhibit
-    baselines_validation/    Table: baselines  
+    baselines_validation/    Table: baselines  (SEE NOTE BELOW)
     discriminator_power/     Table + figure: order sweep vs CV-1SE
     vdem_ordersweep/         Table: panel application
     extensions/              Table: baselines on panels; d=5 suite
+    ksweep_k4/               K=4 study (400 selections)
+    coverage_indep/          independent-split certificate coverage (300 selections)
+    bspline_basis/           basis generality: B-spline vs polynomial (320 paired selections)
   notebooks/
     01_method_validation.ipynb   main suite + censoring exhibit
     02_baselines.ipynb           NID / hierNet / CV-1SE, paired
     03_discriminator.ipynb       noise-band separation
     04_panel_application.ipynb   blocked-split validation + panels
     05_extensions.ipynb          d=5, baselines-on-panels, split policy
+    06_k4_deep_ladder.ipynb      K=4 study (overselection control + power to order 4)
+    07_coverage_independent.ipynb  certificate coverage vs stop-frequency
+    08_bspline_basis.ipynb       basis generality (B-spline tensor vs polynomial)
   data/
     HDL_merged_notdev_selected.csv   country-year panel
 ```
@@ -37,6 +44,16 @@ provenance hash over function source plus configuration constants), and,
 where applicable, `check*.txt` (the pre-registered acceptance-check
 transcript).
 
+## NOTE — one artifact to copy before Step 1 is complete
+
+`results/baselines_validation/per_seed.csv` is **not included** in this
+archive: it is produced by the R `hierNet` path (via `rpy2`), which was
+not available in the environment that assembled the bundle. Copy that one
+file from the canonical results tree into
+`results/baselines_validation/` before running Step 1; `verify_tables.py`
+reports the baselines table as `SKIP` when the file is absent and checks
+it when present. Every other table and study verifies from the shipped
+artifacts as delivered.
 
 ## Step 1 — Verify
 
@@ -45,13 +62,14 @@ python verify_tables.py
 ```
 
 No dependencies beyond the standard library. The script recomputes each
-table cell from the artifact files using the paper's aggregation, compares
-at the precision displayed in the paper (half-unit-in-last-place
-tolerance), and recomputes closed-form reference columns from the
-formulas. Expected output with all artifacts present ends:
+table cell and the K=4 and coverage headline numbers from the artifact
+files using the paper's aggregation, compares at the precision displayed
+in the paper (half-unit-in-last-place tolerance), and recomputes
+closed-form reference columns from the formulas. Expected output with all
+artifacts present ends:
 
 ```
-... table cells checked, 0 failures.
+... checks (... table cells + study numbers), 0 failures.
 ALL PRESENT TABLES VERIFIED
 ```
 
@@ -61,6 +79,12 @@ ALL PRESENT TABLES VERIFIED
    resolve paths from that base; `data/` is included). Notebook 02
    additionally reads the frozen method artifact written by notebook 01;
    notebook 05 reads notebook 02's stored NID calibration.
+
+Notebooks 06, 07, and 08 are single-cell studies added in revision; they
+carry the same frozen `select_order` as the others (08 parameterizes only
+the design constructor, swapping polynomials for a B-spline tensor basis)
+and were verified to reproduce their shipped artifacts bit-for-bit.
+
 2. Preserve the shipped artifacts (`mv results results_shipped`) — reruns
    write into `results/`.
 3. Run each notebook top to bottom. Notebook 02 requires the R `hierNet`

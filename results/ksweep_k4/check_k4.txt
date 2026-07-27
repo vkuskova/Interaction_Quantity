@@ -1,0 +1,24 @@
+PASS  calibration at K=4: 0/240 overselections on o1/o2/o3 nulls < binomial 1%-tail count 21 (control survives three boundary tests)
+PASS  power to order 4 (indep): 80/80 correct >= 0.9
+PASS  coherence audit at K=4: 0 incoherent rows (accept H_khat with a later p<=alpha)
+OBS   o3 (just below the top) overselects to 4 in 0/80 cells
+OBS   o1     indep    0.0  {1: 20, 2: 0, 3: 0, 4: 0}
+OBS   o1     indep    0.5  {1: 20, 2: 0, 3: 0, 4: 0}
+OBS   o1     pair0.5  0.0  {1: 20, 2: 0, 3: 0, 4: 0}
+OBS   o1     pair0.5  0.5  {1: 20, 2: 0, 3: 0, 4: 0}
+OBS   o2     indep    0.0  {1: 0, 2: 20, 3: 0, 4: 0}
+OBS   o2     indep    0.5  {1: 0, 2: 20, 3: 0, 4: 0}
+OBS   o2     pair0.5  0.0  {1: 0, 2: 20, 3: 0, 4: 0}
+OBS   o2     pair0.5  0.5  {1: 0, 2: 20, 3: 0, 4: 0}
+OBS   o3     indep    0.0  {1: 0, 2: 0, 3: 20, 4: 0}
+OBS   o3     indep    0.5  {1: 0, 2: 0, 3: 20, 4: 0}
+OBS   o3     pair0.5  0.0  {1: 0, 2: 0, 3: 20, 4: 0}
+OBS   o3     pair0.5  0.5  {1: 0, 2: 0, 3: 20, 4: 0}
+OBS   o4     indep    0.0  {1: 0, 2: 0, 3: 0, 4: 20}
+OBS   o4     indep    0.5  {1: 0, 2: 0, 3: 0, 4: 20}
+OBS   o4     pair0.5  0.0  {1: 0, 2: 0, 3: 0, 4: 20}
+OBS   o4     pair0.5  0.5  {1: 0, 2: 0, 3: 0, 4: 20}
+OBS   o4mix  indep    0.0  {1: 0, 2: 0, 3: 0, 4: 20}
+OBS   o4mix  indep    0.5  {1: 0, 2: 0, 3: 0, 4: 20}
+OBS   o4mix  pair0.5  0.0  {1: 0, 2: 0, 3: 0, 4: 20}
+OBS   o4mix  pair0.5  0.5  {1: 0, 2: 0, 3: 0, 4: 20}

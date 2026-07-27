@@ -1,6 +1,6 @@
 {
   "experiment": "vdem_ordersweep_app",
-  "timestamp": "2026-07-26 21:07:57",
+  "timestamp": "2026-07-27 00:43:15",
   "config": {
     "TRIPLES": {
       "navco": [
@@ -31,7 +31,7 @@
     "block_col": "country_id",
     "SEED_SCHEME": "crc32-full-v3"
   },
-  "code_sha256": "0c937fd023d29c42e23f369fd343f127731af62071ae43bc1f53528d65047f0a",
+  "code_sha256": "acf71878776b9e92e5a2887b2ddc3ec8afbfedfd084efabc42498674fa26b3ec",
   "provenance_scheme": "code+consts-v2",
   "numpy": "2.4.4",
   "scipy": "1.17.1",

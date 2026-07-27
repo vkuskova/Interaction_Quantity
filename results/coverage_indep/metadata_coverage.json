@@ -1,0 +1,30 @@
+{
+  "experiment": "coverage_indep",
+  "timestamp": "2026-07-27 00:33:22",
+  "config": {
+    "N": 20000,
+    "R": 50,
+    "SIGMAS": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0
+    ],
+    "dgp": "o3",
+    "dependence": "pair0.9",
+    "splits": "independent",
+    "K": 3,
+    "D": 4,
+    "S": 10,
+    "ALPHA": 0.05,
+    "SEED_SCHEME": "crc32-full-v3"
+  },
+  "code_sha256": "c4a83eb61e50509ec3e1e086bf4eab7dfa530f70d3fcb9108d5af9f68b05cdaf",
+  "provenance_scheme": "source-v2",
+  "numpy": "2.0.2",
+  "scipy": "1.16.3",
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.35"
+}

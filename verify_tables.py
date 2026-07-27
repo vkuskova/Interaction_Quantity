@@ -139,7 +139,56 @@ if present("extensions/per_seed_vdem_ext.csv"):
         chk("tab:realbase", f"{r['outcome']}/{r['triple']}/nid", int(r["khat_nid"]), "2")
 else: skipped.append("tab:realbase (extensions)")
 
-print(f"{checked} table cells checked, {len(fails)} failures.")
+
+# ---------- New studies: K=4 and independent-split coverage (prose numbers) ----------
+if present("ksweep_k4/per_seed_k4.csv"):
+    rows=load(os.path.join(RD,"ksweep_k4/per_seed_k4.csv"))
+    nulls=[r for r in rows if r["dgp"] in ("o1","o2","o3")]
+    over=sum(int(r["khat"])>int(r["true_order"]) for r in nulls)
+    chk("k4","null overselections (paper: 0)",over,"0")
+    pw=[r for r in rows if r["dgp"] in ("o4","o4mix") and r["dependence"]=="indep"]
+    chk("k4","order-4 power indep (paper: 80)",sum(int(r["khat"])==4 for r in pw),"80")
+    allcorrect=sum(int(r["khat"])==int(r["true_order"]) for r in rows)
+    chk("k4","total correct (paper: 400)",allcorrect,"400")
+else: skipped.append("k4 study (ksweep_k4)")
+
+if present("coverage_indep/per_seed_coverage.csv"):
+    rows=load(os.path.join(RD,"coverage_indep/per_seed_coverage.csv"))
+    F=lambda r:(1-r**2)**2/((1+r**2)*(1+2*r**2)); VH=1+2*0.81
+    truth=lambda s:F(0.9)*VH/(VH+s**2)
+    fc=ft=rc=rt=0
+    for sig in [1.0,2.0,3.0,4.0,5.0,6.0]:
+        cs=[r for r in rows if abs(float(r["sigma"])-sig)<1e-9]
+        stops=[r for r in cs if int(r["khat"])==2 and r["ub_cert"]!=""]
+        if not stops: continue
+        cov=sum(float(r["ub_cert"])>=truth(sig) for r in stops)
+        if len(stops)/len(cs)>=0.5: fc+=cov; ft+=len(stops)
+        else: rc+=cov; rt+=len(stops)
+    chk("coverage","frequent-stop covered (paper: 113)",fc,"113")
+    chk("coverage","frequent-stop total (paper: 119)",ft,"119")
+    chk("coverage","rare-stop covered (paper: 12)",rc,"12")
+    chk("coverage","rare-stop total (paper: 18)",rt,"18")
+else: skipped.append("coverage study (coverage_indep)")
+
+# ---------- Table: basis generality (tab:basis) + B-spline study numbers ----------
+if present("bspline_basis/per_seed_bspline.csv"):
+    rows=load(os.path.join(RD,"bspline_basis/per_seed_bspline.csv"))
+    nulls=[r for r in rows if r["dgp"] in ("o1","o2")]
+    over=sum(int(r["khat_bspline"])>int(r["true_order"]) for r in nulls)
+    chk("bspline","null overselections (paper: 0)",over,"0")
+    agree=sum(int(r["khat_bspline"])==int(r["khat_poly"]) for r in rows)
+    chk("bspline","basis agreement (paper: 302)",agree,"302")
+    # per-cell agreement pattern from tab:basis: all cells 'all' agree except o3/o3mix pair0.9 sigma0.5 -> bspline 9 at k=2
+    for dgp in ("o3","o3mix"):
+        cs=[r for r in rows if r["dgp"]==dgp and r["dependence"]=="pair0.9" and abs(float(r["sigma"])-0.5)<1e-9]
+        k2=sum(int(r["khat_bspline"])==2 for r in cs)
+        chk("tab:basis",f"{dgp}/pair0.9/0.5 bspline k=2 (paper: 9)",k2,"9")
+    # spot-check an 'all agree' cell: o1 indep -> all 1 both bases
+    o1=[r for r in rows if r["dgp"]=="o1" and r["dependence"]=="indep"]
+    chk("tab:basis","o1/indep bspline all order 1",sum(int(r["khat_bspline"])==1 for r in o1),str(len(o1)))
+else: skipped.append("tab:basis / bspline study (bspline_basis)")
+
+print(f"{checked} checks ({checked} table cells + study numbers), {len(fails)} failures.")
 for f in fails: print("FAIL ", f)
 for s in skipped: print("SKIP  ", s)
 print("ALL PRESENT TABLES VERIFIED" if not fails else "VERIFICATION FAILED")

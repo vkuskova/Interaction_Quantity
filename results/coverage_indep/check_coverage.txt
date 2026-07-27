@@ -1,0 +1,5 @@
+PASS  completeness: 300 rows (expect 300), data hash per row
+PASS  closed-form gap match: mean rem2 within max(4 SE, 1e-4) of the optimism-adjusted closed form at every sigma
+OBS   frequent-stop cells (>=50% stop): coverage 113/119 = 0.95, consistent with nominal 95%: True
+OBS   rare-stop cells (<50% stop): coverage 12/18 = 0.67, consistent with nominal 95%: False
+OBS   prediction: coverage nominal under frequent (systematic) stops, degraded under rare stops -- unifies the censoring exhibit and the power-boundary finding

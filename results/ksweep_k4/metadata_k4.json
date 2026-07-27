@@ -1,0 +1,34 @@
+{
+  "experiment": "ksweep_k4",
+  "timestamp": "2026-07-27 00:11:05",
+  "config": {
+    "N": 20000,
+    "R": 20,
+    "DGPS": [
+      "o1",
+      "o2",
+      "o3",
+      "o4",
+      "o4mix"
+    ],
+    "DEPS": [
+      "indep",
+      "pair0.5"
+    ],
+    "SIGMAS": [
+      0.0,
+      0.5
+    ],
+    "K": 4,
+    "D": 4,
+    "S": 10,
+    "ALPHA": 0.05,
+    "SEED_SCHEME": "crc32-full-v3"
+  },
+  "code_sha256": "9d0617e1d1238e3c1d85780c2091206266a8bdb2620de0f51cc8c8fe63e13d22",
+  "provenance_scheme": "source-v2",
+  "numpy": "2.0.2",
+  "scipy": "1.16.3",
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.35"
+}

@@ -1,0 +1,19 @@
+PASS  B-spline calibration: 0/160 overselections on o1/o2 nulls < binomial 1%-tail count 16
+FAIL  B-spline power on order-3 (o3, o3mix; both deps): 142/160 >= 0.9
+FAIL  basis agreement: B-spline and polynomial khat agree on 302/320 paired datasets
+OBS   o1     indep     0.0  {1: 20, 2: 0, 3: 0}   ({1: 20, 2: 0, 3: 0})
+OBS   o1     indep     0.5  {1: 20, 2: 0, 3: 0}   ({1: 20, 2: 0, 3: 0})
+OBS   o1     pair0.9   0.0  {1: 20, 2: 0, 3: 0}   ({1: 20, 2: 0, 3: 0})
+OBS   o1     pair0.9   0.5  {1: 20, 2: 0, 3: 0}   ({1: 20, 2: 0, 3: 0})
+OBS   o2     indep     0.0  {1: 0, 2: 20, 3: 0}   ({1: 0, 2: 20, 3: 0})
+OBS   o2     indep     0.5  {1: 0, 2: 20, 3: 0}   ({1: 0, 2: 20, 3: 0})
+OBS   o2     pair0.9   0.0  {1: 0, 2: 20, 3: 0}   ({1: 0, 2: 20, 3: 0})
+OBS   o2     pair0.9   0.5  {1: 0, 2: 20, 3: 0}   ({1: 0, 2: 20, 3: 0})
+OBS   o3     indep     0.0  {1: 0, 2: 0, 3: 20}   ({1: 0, 2: 0, 3: 20})
+OBS   o3     indep     0.5  {1: 0, 2: 0, 3: 20}   ({1: 0, 2: 0, 3: 20})
+OBS   o3     pair0.9   0.0  {1: 0, 2: 0, 3: 20}   ({1: 0, 2: 0, 3: 20})
+OBS   o3     pair0.9   0.5  {1: 0, 2: 9, 3: 11}   ({1: 0, 2: 0, 3: 20})
+OBS   o3mix  indep     0.0  {1: 0, 2: 0, 3: 20}   ({1: 0, 2: 0, 3: 20})
+OBS   o3mix  indep     0.5  {1: 0, 2: 0, 3: 20}   ({1: 0, 2: 0, 3: 20})
+OBS   o3mix  pair0.9   0.0  {1: 0, 2: 0, 3: 20}   ({1: 0, 2: 0, 3: 20})
+OBS   o3mix  pair0.9   0.5  {1: 0, 2: 9, 3: 11}   ({1: 0, 2: 0, 3: 20})
