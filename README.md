@@ -18,7 +18,7 @@ order_sweep_repro/
   results/                   per-replicate artifacts, one dir per experiment
     ordersweep_validation/   Tables: main suite + appendix full table
     ordersweep_censoring/    Table: censoring exhibit
-    baselines_validation/    Table: baselines  (SEE NOTE BELOW)
+    baselines_validation/    Table: baselines  
     discriminator_power/     Table + figure: order sweep vs CV-1SE
     vdem_ordersweep/         Table: panel application
     extensions/              Table: baselines on panels; d=5 suite
@@ -43,17 +43,6 @@ an `experiment` identifier), `metadata*.json` (configuration and a
 provenance hash over function source plus configuration constants), and,
 where applicable, `check*.txt` (the pre-registered acceptance-check
 transcript).
-
-## NOTE — one artifact to copy before Step 1 is complete
-
-`results/baselines_validation/per_seed.csv` is **not included** in this
-archive: it is produced by the R `hierNet` path (via `rpy2`), which was
-not available in the environment that assembled the bundle. Copy that one
-file from the canonical results tree into
-`results/baselines_validation/` before running Step 1; `verify_tables.py`
-reports the baselines table as `SKIP` when the file is absent and checks
-it when present. Every other table and study verifies from the shipped
-artifacts as delivered.
 
 ## Step 1 — Verify
 
