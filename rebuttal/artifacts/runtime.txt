@@ -1,0 +1,6 @@
+n=20,000, S=10, D=4; one full sweep (design construction + 10*K fits)
+d= 3 K=3 p_K=   35 seconds=    1.3 (paper implementation)   seconds=    2.9 (direct constructor)
+d= 5 K=3 p_K=  121 seconds=    6.2 (paper implementation)   seconds=    3.9 (direct constructor)
+d= 8 K=3 p_K=  425 seconds=   17.3 (paper implementation)   seconds=   16.5 (direct constructor)
+d=10 K=2 p_K=  311 seconds=   13.5 (paper implementation)   seconds=    9.8 (direct constructor)
+d=20 K=2 p_K= 1221 seconds=   62.5 (direct constructor; enumeration infeasible at this d)

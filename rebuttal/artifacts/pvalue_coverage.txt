@@ -1,0 +1,6 @@
+accepted p-value bin         stops   covered   coverage
+borderline  0.05<p<=0.10        23        21   0.91
+moderate    0.10<p<=0.25        52        49   0.94
+clear       0.25<p<=0.50        40        39   0.97
+systematic  p>0.50              22        16   0.73
+borderline acceptances (p<=0.10): 21/23 covered; clear acceptances (p>0.10): 104/114 covered

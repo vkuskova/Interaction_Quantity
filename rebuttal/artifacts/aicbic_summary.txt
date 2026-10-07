@@ -1,0 +1,8 @@
+sweep: null-over sigma=0.5 1/160=0.006 | null-over sigma=0 0/160 | power 1.000
+AIC: null-over sigma=0.5 15/160=0.094 | null-over sigma=0 131/160 | power 1.000
+BIC: null-over sigma=0.5 0/160=0.000 | null-over sigma=0 51/160 | power 1.000
+sigma=1.0: 20 | 20 | 20 | 20
+sigma=1.5: 20 | 10 | 20 | 20
+sigma=2.0: 20 | 2 | 20 | 20
+sigma=2.5: 18 | 0 | 20 | 17
+sigma=3.0: 13 | 0 | 20 | 16
